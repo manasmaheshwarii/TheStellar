@@ -5,7 +5,7 @@ import { ArrowDown, MessageCircle, Phone } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-stellar-900 via-stellar-800 to-stellar-700 text-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-stellar-700 via-stellar-600 to-stellar-500 text-white overflow-hidden">
       <div className="absolute inset-0 bg-black opacity-20"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 py-20 lg:py-32">

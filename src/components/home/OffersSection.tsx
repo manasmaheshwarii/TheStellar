@@ -175,14 +175,14 @@ const OffersSection = () => {
                 Chat with Expert
               </Button>
             </Link>
-            <a href="tel:+15551234567">
+            {/* <a href="tel:+15551234567">
               <Button
                 size="lg"
                 className="bg-stellar-600 hover:bg-stellar-500 text-white"
               >
                 Call for Consultation
               </Button>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
