@@ -126,14 +126,14 @@ const Footer = () => {
                   Warranty
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/returns"
                   className="text-stellar-300 hover:text-white transition-colors"
                 >
                   Returns
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/faq"
@@ -174,7 +174,7 @@ const Footer = () => {
 
         <div className="border-t border-stellar-800 mt-8 pt-8 text-center">
           <p className="text-stellar-400">
-            © 2025 The Stellar. All rights reserved. | Designed for healthcare
+            © 2019 The Stellar. All rights reserved. | Designed for healthcare
             professionals.
           </p>
         </div>

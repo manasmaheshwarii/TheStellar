@@ -16,10 +16,9 @@ const HeroSection = () => {
               <span className="text-stellar-300"> Modern Enterprises</span>
             </h1>
             <p className="text-xl text-stellar-200 mb-8 leading-relaxed">
-              Discover our comprehensive range of office automation, visual
-              solutions, medical equipment, communication systems, and
-              specialized solutions designed to enhance your business
-              operations.
+              Discover our comprehensive range of medical equipment,
+              communication systems and medical consultation designed to enhance
+              your business operations.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -81,10 +80,10 @@ const HeroSection = () => {
                     <span className="text-white text-2xl font-bold">O</span>
                   </div>
                   <h3 className="font-semibold text-stellar-800 mb-2">
-                    Office Automation
+                    Medical Equipment
                   </h3>
                   <p className="text-stellar-600 text-sm">
-                    Printers & photocopiers
+                    Complete Healthcare solutions
                   </p>
                 </div>
 
@@ -92,10 +91,10 @@ const HeroSection = () => {
                   <div className="w-16 h-16 bg-stellar-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-white text-2xl font-bold">V</span>
                   </div>
-                  <h3 className="font-semibold text-stellar-800 mb-2">
-                    Visual Solution
-                  </h3>
-                  <p className="text-stellar-600 text-sm">Display systems</p>
+                  <h3 className="font-semibold text-stellar-800 mb-2">Radio</h3>
+                  <p className="text-stellar-600 text-sm">
+                    CTI, MRI & CATH Lab
+                  </p>
                 </div>
 
                 <div className="bg-stellar-50 rounded-xl p-6 text-center">
@@ -103,10 +102,10 @@ const HeroSection = () => {
                     <span className="text-white text-2xl font-bold">M</span>
                   </div>
                   <h3 className="font-semibold text-stellar-800 mb-2">
-                    Medical Equipment
+                    Office Automation
                   </h3>
                   <p className="text-stellar-600 text-sm">
-                    Healthcare solutions
+                    Printers & photocopiers
                   </p>
                 </div>
 

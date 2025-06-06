@@ -21,8 +21,6 @@ const CategoryListing = () => {
   const [sortBy, setSortBy] = useState("name");
   const [searchTerm, setSearchTerm] = useState("");
 
-  // ... keep existing code (products array) the same
-
   const categoryNames = {
     "office-automation": "Office Automation",
     "visual-solution": "Visual Solution",
@@ -35,14 +33,14 @@ const CategoryListing = () => {
     all: "All Products",
   };
 
-  // ... keep existing code (filtering, sorting, and return statement) the same
+  // ... keep existing code (products array) the same
+
   const products = [
     // Office Automation Products
     {
       id: 1,
       name: "A4 Monochrome (Photocopier)",
       category: "office-automation",
-      price: "₹2,500",
       image:
         "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
       inStock: true,
@@ -52,7 +50,6 @@ const CategoryListing = () => {
       id: 2,
       name: "A4 Monochrome MFP (Photocopier)",
       category: "office-automation",
-      price: "₹3,200",
       image:
         "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
       inStock: true,
@@ -62,7 +59,6 @@ const CategoryListing = () => {
       id: 3,
       name: "A3 Monochrome MFP(Photocopier)",
       category: "office-automation",
-      price: "₹4,800",
       image:
         "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
       inStock: true,
@@ -72,7 +68,6 @@ const CategoryListing = () => {
       id: 4,
       name: "A3 Colour(Photocopier)",
       category: "office-automation",
-      price: "₹8,500",
       image:
         "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
       inStock: true,
@@ -82,7 +77,6 @@ const CategoryListing = () => {
       id: 5,
       name: "A3 Business Color MFP(Photocopier)",
       category: "office-automation",
-      price: "₹12,000",
       image:
         "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
       inStock: true,
@@ -93,7 +87,6 @@ const CategoryListing = () => {
       id: 6,
       name: "A3 Business advanced colour MFP(Photocopier)",
       category: "office-automation",
-      price: "₹1,200",
       image:
         "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=300&fit=crop",
       inStock: true,
@@ -103,7 +96,6 @@ const CategoryListing = () => {
       id: 7,
       name: "Epson Workforce Enterprise WF-C20590 (Printer)",
       category: "office-automation",
-      price: "₹800",
       image:
         "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=300&fit=crop",
       inStock: true,
@@ -113,7 +105,6 @@ const CategoryListing = () => {
       id: 8,
       name: "Epson Workforce Pro WF-C5790(Printer)",
       category: "office-automation",
-      price: "₹750",
       image:
         "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=300&fit=crop",
       inStock: true,
@@ -123,7 +114,6 @@ const CategoryListing = () => {
       id: 9,
       name: "Epson Workforce Pro WF-M5799(Printer)",
       category: "office-automation",
-      price: "₹3,500",
       image:
         "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
       inStock: true,
@@ -135,7 +125,6 @@ const CategoryListing = () => {
       id: 10,
       name: "PN-Y436",
       category: "visual-solution",
-      price: "₹4,200",
       image:
         "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
       inStock: true,
@@ -145,7 +134,6 @@ const CategoryListing = () => {
       id: 11,
       name: "PN-Q801",
       category: "visual-solution",
-      price: "₹2,800",
       image:
         "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
       inStock: true,
@@ -155,7 +143,6 @@ const CategoryListing = () => {
       id: 12,
       name: "PN_V550A",
       category: "visual-solution",
-      price: "₹5,500",
       image:
         "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
       inStock: true,
@@ -165,7 +152,6 @@ const CategoryListing = () => {
       id: 13,
       name: "PN-80TC3",
       category: "visual-solution",
-      price: "₹3,200",
       image:
         "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
       inStock: true,
@@ -175,7 +161,6 @@ const CategoryListing = () => {
       id: 14,
       name: "PN-40TC1",
       category: "visual-solution",
-      price: "₹4,800",
       image:
         "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
       inStock: true,
@@ -185,7 +170,6 @@ const CategoryListing = () => {
       id: 15,
       name: "PN-70TW3A",
       category: "visual-solution",
-      price: "₹4,800",
       image:
         "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
       inStock: true,
@@ -197,7 +181,6 @@ const CategoryListing = () => {
       id: 16,
       name: "FP-J80M-H (Home Purifier)",
       category: "purifiers",
-      price: "₹450",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
       inStock: true,
@@ -207,7 +190,6 @@ const CategoryListing = () => {
       id: 17,
       name: "FP-J40M-W (Home Purifier)",
       category: "purifiers",
-      price: "₹320",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
       inStock: true,
@@ -217,7 +199,6 @@ const CategoryListing = () => {
       id: 18,
       name: "FP-J60M-W (Home Purifier)",
       category: "purifiers",
-      price: "₹380",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
       inStock: true,
@@ -227,7 +208,6 @@ const CategoryListing = () => {
       id: 19,
       name: "FU-A28E-W (Home Purifier)",
       category: "purifiers",
-      price: "₹280",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
       inStock: true,
@@ -237,7 +217,6 @@ const CategoryListing = () => {
       id: 20,
       name: "FP-JC2M-B (Car Purifier)",
       category: "purifiers",
-      price: "₹150",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
       inStock: true,
@@ -247,7 +226,6 @@ const CategoryListing = () => {
       id: 21,
       name: "IG-GC2E (Car Purifier)",
       category: "purifiers",
-      price: "₹180",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
       inStock: true,
@@ -257,7 +235,6 @@ const CategoryListing = () => {
       id: 22,
       name: "IG-DC2E-B (Car Purifier)",
       category: "purifiers",
-      price: "₹160",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
       inStock: true,
@@ -269,7 +246,6 @@ const CategoryListing = () => {
       id: 23,
       name: "Portable X-Ray Machine 30mA (Machines)",
       category: "allans-medical",
-      price: "₹25,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -279,7 +255,6 @@ const CategoryListing = () => {
       id: 24,
       name: "Portable X-Ray Machine 50mA(Machines)",
       category: "allans-medical",
-      price: "₹32,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -289,7 +264,6 @@ const CategoryListing = () => {
       id: 25,
       name: "100 MA X-Ray Machine(Machines)",
       category: "allans-medical",
-      price: "₹45,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -299,7 +273,6 @@ const CategoryListing = () => {
       id: 26,
       name: "300 MA X-Ray Machine(Machines)",
       category: "allans-medical",
-      price: "₹75,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -309,7 +282,6 @@ const CategoryListing = () => {
       id: 27,
       name: "500 MA X-Ray Machine(Machines)",
       category: "allans-medical",
-      price: "₹95,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -319,7 +291,6 @@ const CategoryListing = () => {
       id: 28,
       name: "Dental X-Ray Machine(Machines)",
       category: "allans-medical",
-      price: "₹18,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -329,7 +300,6 @@ const CategoryListing = () => {
       id: 29,
       name: "Floor Mounted X-Ray Unit(Machines)",
       category: "allans-medical",
-      price: "₹85,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -339,7 +309,6 @@ const CategoryListing = () => {
       id: 30,
       name: "OPG Machine(Machines)",
       category: "allans-medical",
-      price: "₹55,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -349,7 +318,6 @@ const CategoryListing = () => {
       id: 31,
       name: "ECG Machine (Medical Equipment & ECP Machines)",
       category: "allans-medical",
-      price: "₹8,500",
       image:
         "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop",
       inStock: true,
@@ -359,7 +327,6 @@ const CategoryListing = () => {
       id: 32,
       name: "Computed Radiography System(Medical Equipment & ECP Machines)",
       category: "allans-medical",
-      price: "₹65,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -369,7 +336,6 @@ const CategoryListing = () => {
       id: 33,
       name: "C-Arm Machine(Medical Equipment & ECP Machines)",
       category: "allans-medical",
-      price: "₹125,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -379,7 +345,6 @@ const CategoryListing = () => {
       id: 34,
       name: "OPG Machine for Panoramic Radiography(Medical Equipment & ECP Machines)",
       category: "allans-medical",
-      price: "₹125,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -389,7 +354,6 @@ const CategoryListing = () => {
       id: 35,
       name: "Ultrasound Machine (Sonography Equipment)",
       category: "allans-medical",
-      price: "₹85,000",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -401,7 +365,6 @@ const CategoryListing = () => {
       id: 36,
       name: "100mA (X-Ray Machine)",
       category: "adonis-medical",
-      price: "₹42,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       inStock: true,
@@ -411,7 +374,6 @@ const CategoryListing = () => {
       id: 37,
       name: "300mA (X-Ray Machine)",
       category: "adonis-medical",
-      price: "₹72,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       inStock: true,
@@ -421,7 +383,6 @@ const CategoryListing = () => {
       id: 38,
       name: "500mA (X-Ray Machine)",
       category: "adonis-medical",
-      price: "₹92,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       inStock: true,
@@ -431,7 +392,6 @@ const CategoryListing = () => {
       id: 39,
       name: "800mA (X-Ray Machine)",
       category: "adonis-medical",
-      price: "₹115,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       inStock: true,
@@ -441,7 +401,6 @@ const CategoryListing = () => {
       id: 40,
       name: "C-Arm with 1K x 1K Mobile Surgical (C-ARM Machines)",
       category: "adonis-medical",
-      price: "₹95,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       inStock: true,
@@ -451,7 +410,6 @@ const CategoryListing = () => {
       id: 41,
       name: "C-Arm High Frequency (C-ARM Machines)",
       category: "adonis-medical",
-      price: "₹85,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       inStock: true,
@@ -461,7 +419,6 @@ const CategoryListing = () => {
       id: 42,
       name: "C-Arm Rotating Anode (C-ARM Machines)",
       category: "adonis-medical",
-      price: "₹78,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       inStock: true,
@@ -471,7 +428,6 @@ const CategoryListing = () => {
       id: 43,
       name: "Flat Panel Digital X-Ray",
       category: "adonis-medical",
-      price: "₹95,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       inStock: true,
@@ -483,7 +439,6 @@ const CategoryListing = () => {
       id: 44,
       name: "COVID 19 Testing AI Software (ESDS Software)",
       category: "covid-19",
-      price: "₹15,000",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -493,7 +448,6 @@ const CategoryListing = () => {
       id: 45,
       name: "AA+ Covid 19 Testing Solution (ESDS Software)",
       category: "covid-19",
-      price: "₹18,000",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -503,7 +457,6 @@ const CategoryListing = () => {
       id: 46,
       name: "Self Check Kiosk Solution (KIOSK)",
       category: "covid-19",
-      price: "₹8,500",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -513,7 +466,6 @@ const CategoryListing = () => {
       id: 47,
       name: "KLEANTUBE Smart Solution (KIOSK)",
       category: "covid-19",
-      price: "₹12,000",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -523,7 +475,6 @@ const CategoryListing = () => {
       id: 48,
       name: "Handy Standy Solution (WESAFETECH)",
       category: "covid-19",
-      price: "₹450",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -533,7 +484,6 @@ const CategoryListing = () => {
       id: 49,
       name: "Healthy Standee Solution (WESAFETECH)",
       category: "covid-19",
-      price: "₹650",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -543,7 +493,6 @@ const CategoryListing = () => {
       id: 50,
       name: "UV Disinfection System (WESAFETECH)",
       category: "covid-19",
-      price: "₹3,200",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -553,7 +502,6 @@ const CategoryListing = () => {
       id: 51,
       name: "Well Safe HVAC Air Refinement (WESAFETECH)",
       category: "covid-19",
-      price: "₹5,500",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -563,7 +511,6 @@ const CategoryListing = () => {
       id: 52,
       name: "Well Safe Robot Tech (WESAFETECH)",
       category: "covid-19",
-      price: "₹25,000",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -573,7 +520,6 @@ const CategoryListing = () => {
       id: 53,
       name: "Well Safe Tech App (WESAFETECH)",
       category: "covid-19",
-      price: "₹2,500",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -583,7 +529,6 @@ const CategoryListing = () => {
       id: 54,
       name: "AIRLENS Car Air Sanitizer (AIRLENS)",
       category: "covid-19",
-      price: "₹250",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -593,7 +538,6 @@ const CategoryListing = () => {
       id: 55,
       name: "Airlens N99 Level Masks (AIRLENS)",
       category: "covid-19",
-      price: "₹45",
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -605,7 +549,6 @@ const CategoryListing = () => {
       id: 56,
       name: "OpenScape Business",
       category: "unified-communications",
-      price: "₹12,000",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -615,7 +558,6 @@ const CategoryListing = () => {
       id: 57,
       name: "OpenScape 4000",
       category: "unified-communications",
-      price: "₹18,000",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -625,7 +567,6 @@ const CategoryListing = () => {
       id: 58,
       name: "OpenScape Voice",
       category: "unified-communications",
-      price: "₹8,500",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -635,7 +576,6 @@ const CategoryListing = () => {
       id: 59,
       name: "OpenStage Desktop Phones",
       category: "unified-communications",
-      price: "₹350",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -645,7 +585,6 @@ const CategoryListing = () => {
       id: 60,
       name: "OpenScape Deskphone",
       category: "unified-communications",
-      price: "₹280",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -655,7 +594,6 @@ const CategoryListing = () => {
       id: 61,
       name: "WLAN and Cordless Phones",
       category: "unified-communications",
-      price: "₹420",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -665,7 +603,6 @@ const CategoryListing = () => {
       id: 62,
       name: "Soft Client",
       category: "unified-communications",
-      price: "₹150",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -675,7 +612,6 @@ const CategoryListing = () => {
       id: 63,
       name: "Mobile Clients",
       category: "unified-communications",
-      price: "₹120",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -685,7 +621,6 @@ const CategoryListing = () => {
       id: 64,
       name: "OpenScape Xpert",
       category: "unified-communications",
-      price: "₹2,500",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -695,7 +630,6 @@ const CategoryListing = () => {
       id: 65,
       name: "OpenScape UC",
       category: "unified-communications",
-      price: "₹3,200",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -705,7 +639,6 @@ const CategoryListing = () => {
       id: 66,
       name: "OpenScape Xpressions",
       category: "unified-communications",
-      price: "₹1,800",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -715,7 +648,6 @@ const CategoryListing = () => {
       id: 67,
       name: "OpenScape Web Collaboration",
       category: "unified-communications",
-      price: "₹2,200",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -725,7 +657,6 @@ const CategoryListing = () => {
       id: 68,
       name: "OpenScape Contact Center",
       category: "unified-communications",
-      price: "₹15,000",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -737,7 +668,6 @@ const CategoryListing = () => {
       id: 69,
       name: "HP-110 EPABX System",
       category: "hp-seriesepabx",
-      price: "₹2,500",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -747,7 +677,6 @@ const CategoryListing = () => {
       id: 70,
       name: "HP-308 EPABX System",
       category: "hp-seriesepabx",
-      price: "₹4,200",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -757,7 +686,6 @@ const CategoryListing = () => {
       id: 71,
       name: "HP-308H Key Telephone System",
       category: "hp-seriesepabx",
-      price: "₹3,800",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -767,7 +695,6 @@ const CategoryListing = () => {
       id: 72,
       name: "Keyphone K-308H",
       category: "hp-seriesepabx",
-      price: "₹450",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -777,7 +704,6 @@ const CategoryListing = () => {
       id: 73,
       name: "HP-120 Key Telephone System",
       category: "hp-seriesepabx",
-      price: "₹2,800",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -787,7 +713,6 @@ const CategoryListing = () => {
       id: 74,
       name: "Key Phone 3150",
       category: "hp-seriesepabx",
-      price: "₹320",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -797,7 +722,6 @@ const CategoryListing = () => {
       id: 75,
       name: "HP-150 Communication System",
       category: "hp-seriesepabx",
-      price: "₹6,500",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -807,7 +731,6 @@ const CategoryListing = () => {
       id: 76,
       name: "HP-190 Communication System",
       category: "hp-seriesepabx",
-      price: "₹8,200",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -817,7 +740,6 @@ const CategoryListing = () => {
       id: 77,
       name: "HP-256 IP Communication System",
       category: "hp-seriesepabx",
-      price: "₹12,500",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -827,7 +749,6 @@ const CategoryListing = () => {
       id: 78,
       name: "HP-256 Communication System",
       category: "hp-seriesepabx",
-      price: "₹11,800",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -837,7 +758,6 @@ const CategoryListing = () => {
       id: 79,
       name: "Digital Phones 8150/8180/8230",
       category: "hp-seriesepabx",
-      price: "₹380",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -847,7 +767,6 @@ const CategoryListing = () => {
       id: 80,
       name: "HP-1000 Communication System",
       category: "hp-seriesepabx",
-      price: "₹25,000",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -857,7 +776,6 @@ const CategoryListing = () => {
       id: 81,
       name: "HP-R Recording Solution",
       category: "hp-seriesepabx",
-      price: "₹5,500",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -874,21 +792,7 @@ const CategoryListing = () => {
   });
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    switch (sortBy) {
-      case "price-low":
-        return (
-          parseInt(a.price.replace(/[$,]/g, "")) -
-          parseInt(b.price.replace(/[$,]/g, ""))
-        );
-      case "price-high":
-        return (
-          parseInt(b.price.replace(/[$,]/g, "")) -
-          parseInt(a.price.replace(/[$,]/g, ""))
-        );
-      case "name":
-      default:
-        return a.name.localeCompare(b.name);
-    }
+    return a.name.localeCompare(b.name);
   });
 
   return (
@@ -931,8 +835,6 @@ const CategoryListing = () => {
                 </SelectTrigger>
                 <SelectContent className="bg-white border-stellar-200">
                   <SelectItem value="name">Name A-Z</SelectItem>
-                  <SelectItem value="price-low">Price: Low to High</SelectItem>
-                  <SelectItem value="price-high">Price: High to Low</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -974,9 +876,6 @@ const CategoryListing = () => {
                   <p className="text-stellar-600 text-sm mb-3 line-clamp-2">
                     {product.description}
                   </p>
-                  <div className="text-xl font-bold text-stellar-800">
-                    {product.price}
-                  </div>
                 </CardContent>
 
                 <CardFooter className="p-4 pt-0 flex gap-2">

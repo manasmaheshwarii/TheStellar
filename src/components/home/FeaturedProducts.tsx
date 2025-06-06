@@ -10,8 +10,6 @@ const FeaturedProducts = () => {
       id: 1,
       name: "A3 Business Color MFP",
       category: "Office Automation",
-      price: "₹8,500",
-      originalPrice: "₹9,200",
       image:
         "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
       inStock: true,
@@ -23,8 +21,6 @@ const FeaturedProducts = () => {
       id: 7,
       name: "FP-J80M-H Home Purifier",
       category: "Purifiers",
-      price: "₹450",
-      originalPrice: "₹520",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
       inStock: true,
@@ -35,8 +31,6 @@ const FeaturedProducts = () => {
       id: 11,
       name: "100 MA X-Ray Machine",
       category: "Allans Medical",
-      price: "₹45,000",
-      originalPrice: null,
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       inStock: true,
@@ -48,11 +42,9 @@ const FeaturedProducts = () => {
       id: 15,
       name: "C-Arm High Frequency",
       category: "Adonis Medical",
-      price: "₹85,000",
-      originalPrice: "₹92,000",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
-      inStock: true,
+      inStock: false,
       isNew: false,
       description:
         "High-frequency C-arm surgical imaging for precise operations",
@@ -61,8 +53,6 @@ const FeaturedProducts = () => {
       id: 17,
       name: "COVID 19 Testing AI Software",
       category: "COVID 19",
-      price: "₹15,000",
-      originalPrice: null,
       image:
         "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
       inStock: true,
@@ -73,8 +63,6 @@ const FeaturedProducts = () => {
       id: 21,
       name: "OpenScape Business",
       category: "Telephony",
-      price: "₹12,000",
-      originalPrice: "₹14,500",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       inStock: true,
@@ -115,11 +103,6 @@ const FeaturedProducts = () => {
                       New
                     </Badge>
                   )}
-                  {product.originalPrice && (
-                    <Badge className="bg-red-500 hover:bg-red-600 text-white">
-                      Sale
-                    </Badge>
-                  )}
                 </div>
                 <div className="absolute top-4 right-4">
                   <Badge
@@ -150,16 +133,6 @@ const FeaturedProducts = () => {
                 <p className="text-stellar-600 text-sm mb-4 line-clamp-2">
                   {product.description}
                 </p>
-                <div className="flex items-center space-x-2 mb-4">
-                  <span className="text-2xl font-bold text-stellar-800">
-                    {product.price}
-                  </span>
-                  {product.originalPrice && (
-                    <span className="text-lg text-stellar-400 line-through">
-                      {product.originalPrice}
-                    </span>
-                  )}
-                </div>
               </CardContent>
 
               <CardFooter className="p-6 pt-0 flex gap-3">

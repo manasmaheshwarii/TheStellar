@@ -59,7 +59,7 @@ const ChatSupport = () => {
                 detailed consultations.
               </p>
               <div className="space-y-3">
-                <p className="text-stellar-700 font-medium">+91 40 35564758</p>
+                <p className="text-stellar-700 font-medium">+ 91 9491399000</p>
                 <Button
                   variant="outline"
                   className="w-full border-stellar-300 text-stellar-700 hover:bg-stellar-50"
@@ -81,20 +81,20 @@ const ChatSupport = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-stellar-600">
               <div>
                 <p className="font-medium">Monday - Friday</p>
-                <p>9:00 AM - 6:00 PM EST</p>
+                <p>9:00 AM - 6:00 PM IST</p>
               </div>
               <div>
                 <p className="font-medium">Saturday</p>
-                <p>10:00 AM - 4:00 PM EST</p>
+                <p>10:00 AM - 4:00 PM IST</p>
               </div>
-              <div>
+              {/* <div>
                 <p className="font-medium">Sunday</p>
                 <p>Emergency support only</p>
               </div>
               <div>
                 <p className="font-medium">Response Time</p>
                 <p>Within 1 hour during business hours</p>
-              </div>
+              </div> */}
             </div>
           </CardContent>
         </Card>

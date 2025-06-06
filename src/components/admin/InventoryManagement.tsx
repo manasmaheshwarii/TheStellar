@@ -6,12 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Plus, Edit, Trash2, Search } from "lucide-react";
 
-// Define the Product type
 interface Product {
   id: number;
   name: string;
   category: string;
-  price: number;
   stock: number;
   description: string;
 }
@@ -19,18 +17,16 @@ interface Product {
 interface NewProductForm {
   name: string;
   category: string;
-  price: string;
   stock: string;
   description: string;
 }
 
 const InventoryManagement = () => {
-  const [products, setProducts] = useState([
+  const [products, setProducts] = useState<Product[]>([
     {
       id: 1,
       name: "X-Ray Machine Model X200",
       category: "Radiography",
-      price: 45000,
       stock: 5,
       description: "High-resolution digital X-ray machine",
     },
@@ -38,7 +34,6 @@ const InventoryManagement = () => {
       id: 2,
       name: "Blood Analysis Machine",
       category: "Pathology",
-      price: 28000,
       stock: 3,
       description: "Automated blood chemistry analyzer",
     },
@@ -46,7 +41,6 @@ const InventoryManagement = () => {
       id: 3,
       name: "Surgical Instruments Set",
       category: "OT Equipment",
-      price: 1200,
       stock: 25,
       description: "Complete surgical instruments kit",
     },
@@ -56,37 +50,24 @@ const InventoryManagement = () => {
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [newProduct, setNewProduct] = useState({
+  const [newProduct, setNewProduct] = useState<NewProductForm>({
     name: "",
     category: "",
-    price: "",
     stock: "",
     description: "",
   });
 
   const handleAddProduct = () => {
-    if (
-      newProduct.name &&
-      newProduct.category &&
-      newProduct.price &&
-      newProduct.stock
-    ) {
-      const product = {
+    if (newProduct.name && newProduct.category && newProduct.stock) {
+      const product: Product = {
         id: Date.now(),
         name: newProduct.name,
         category: newProduct.category,
-        price: parseInt(newProduct.price),
         stock: parseInt(newProduct.stock),
         description: newProduct.description,
       };
       setProducts([...products, product]);
-      setNewProduct({
-        name: "",
-        category: "",
-        price: "",
-        stock: "",
-        description: "",
-      });
+      setNewProduct({ name: "", category: "", stock: "", description: "" });
       setIsAddingProduct(false);
     }
   };
@@ -96,11 +77,11 @@ const InventoryManagement = () => {
     setNewProduct({
       name: product.name,
       category: product.category,
-      price: product.price.toString(),
       stock: product.stock.toString(),
       description: product.description,
     });
   };
+
   const handleUpdateProduct = () => {
     if (editingProduct) {
       setProducts(
@@ -110,7 +91,6 @@ const InventoryManagement = () => {
                 ...editingProduct,
                 name: newProduct.name,
                 category: newProduct.category,
-                price: parseInt(newProduct.price),
                 stock: parseInt(newProduct.stock),
                 description: newProduct.description,
               }
@@ -118,13 +98,7 @@ const InventoryManagement = () => {
         )
       );
       setEditingProduct(null);
-      setNewProduct({
-        name: "",
-        category: "",
-        price: "",
-        stock: "",
-        description: "",
-      });
+      setNewProduct({ name: "", category: "", stock: "", description: "" });
     }
   };
 
@@ -204,19 +178,6 @@ const InventoryManagement = () => {
                 />
               </div>
               <div>
-                <Label htmlFor="price">Price (₹)</Label>
-                <Input
-                  id="price"
-                  type="number"
-                  value={newProduct.price}
-                  onChange={(e) =>
-                    setNewProduct({ ...newProduct, price: e.target.value })
-                  }
-                  placeholder="Enter price"
-                  className="border-stellar-200"
-                />
-              </div>
-              <div>
                 <Label htmlFor="stock">Stock Quantity</Label>
                 <Input
                   id="stock"
@@ -259,7 +220,6 @@ const InventoryManagement = () => {
                   setNewProduct({
                     name: "",
                     category: "",
-                    price: "",
                     stock: "",
                     description: "",
                   });
@@ -288,13 +248,12 @@ const InventoryManagement = () => {
                     {product.description}
                   </p>
                   <div className="flex items-center space-x-4 mt-2">
-                    <span className="text-lg font-bold text-stellar-800">
-                      ₹{product.price.toLocaleString()}
-                    </span>
                     <span
-                      className={`px-2 py-1 rounded-full text-xs font-medium ₹{
-                      product.stock < 10 ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
-                    }`}
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        product.stock < 10
+                          ? "bg-red-100 text-red-800"
+                          : "bg-green-100 text-green-800"
+                      }`}
                     >
                       Stock: {product.stock}
                     </span>
