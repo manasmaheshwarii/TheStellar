@@ -49,42 +49,26 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/category/pathology"
+                  to="/category/office-automation"
                   className="text-stellar-300 hover:text-white transition-colors"
                 >
-                  Pathology
+                  Office Automation
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/category/ot-equipment"
+                  to="/category/medical-equipment"
                   className="text-stellar-300 hover:text-white transition-colors"
                 >
-                  OT Equipment
+                  Medical Equipment
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/category/cardiology"
+                  to="/category/Telephony"
                   className="text-stellar-300 hover:text-white transition-colors"
                 >
-                  Cardiology
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/category/dental"
-                  className="text-stellar-300 hover:text-white transition-colors"
-                >
-                  Dental Equipment
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/category/laboratory"
-                  className="text-stellar-300 hover:text-white transition-colors"
-                >
-                  Laboratory
+                  Telephony
                 </Link>
               </li>
             </ul>

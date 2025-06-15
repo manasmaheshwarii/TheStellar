@@ -91,7 +91,9 @@ const HeroSection = () => {
                   <div className="w-16 h-16 bg-stellar-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-white text-2xl font-bold">V</span>
                   </div>
-                  <h3 className="font-semibold text-stellar-800 mb-2">Radio</h3>
+                  <h3 className="font-semibold text-stellar-800 mb-2">
+                    Radiology
+                  </h3>
                   <p className="text-stellar-600 text-sm">
                     CTI, MRI & CATH Lab
                   </p>

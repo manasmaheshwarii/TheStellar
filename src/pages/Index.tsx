@@ -1,10 +1,10 @@
-import React from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import HeroSection from '@/components/home/HeroSection';
-import FeaturedProducts from '@/components/home/FeaturedProducts';
-import CategoriesSection from '@/components/home/CategoriesSection';
-import OffersSection from '@/components/home/OffersSection';
+import React from "react";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import HeroSection from "@/components/home/HeroSection";
+import CategoriesSection from "@/components/home/CategoriesSection";
+import OffersSection from "@/components/home/OffersSection";
+import ComplaintSection from "@/components/home/ComplaintSection";
 
 const Index = () => {
   return (
@@ -12,9 +12,9 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <FeaturedProducts />
         <CategoriesSection />
         <OffersSection />
+        <ComplaintSection />
       </main>
       <Footer />
     </div>

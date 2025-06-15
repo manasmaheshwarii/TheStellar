@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, Menu, X, Phone, MessageCircle, Shield } from "lucide-react";
+import {
+  Search,
+  Menu,
+  X,
+  Phone,
+  MessageCircle,
+  Shield,
+  ChevronDown,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const categories = [
-    "Office Automation",
-    "Visual Solution",
-    "Purifiers",
-    "Allans Medical",
-    "Adonis Medical",
-    "COVID 19",
-    "Unified Communications",
-    "HP Series(EPABX)",
-  ];
+  const handleDropdownToggle = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  };
 
-  // ... keep existing code (component JSX and return statement) the same
+  const closeDropdown = () => {
+    setActiveDropdown(null);
+  };
+
   return (
     <header className="bg-white shadow-lg border-b border-stellar-200">
       {/* Top Bar */}
@@ -114,7 +119,7 @@ const Header = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="hidden md:block mt-4">
+        <nav className="hidden md:block mt-4 relative">
           <div className="flex items-center space-x-8">
             <Link
               to="/"
@@ -122,19 +127,152 @@ const Header = () => {
             >
               Home
             </Link>
-            {categories.map((category) => (
-              <Link
-                key={category}
-                to={`/category/${category
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")
-                  .replace(/\(/g, "")
-                  .replace(/\)/g, "")}`}
-                className="text-stellar-600 hover:text-stellar-800 transition-colors"
+            <Link
+              to="/services"
+              className="text-stellar-700 hover:text-stellar-800 font-medium transition-colors px-4 py-2"
+            >
+              Services
+            </Link>
+
+            {/* Medical Equipment Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => handleDropdownToggle("medical")}
+                onMouseEnter={() => setActiveDropdown("medical")}
+                className="flex items-center space-x-1 text-stellar-600 hover:text-stellar-800 transition-colors"
               >
-                {category}
-              </Link>
-            ))}
+                <span>Medical Equipment</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              {activeDropdown === "medical" && (
+                <div
+                  className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-48 bg-white border border-stellar-200 rounded-md shadow-lg z-50"
+                  onMouseLeave={closeDropdown}
+                >
+                  <div className="p-4">
+                    <Link
+                      to="/category/allans-medical"
+                      className="block px-4 py-2 text-stellar-600 hover:text-stellar-800 hover:bg-stellar-50 rounded transition-colors"
+                      onClick={closeDropdown}
+                    >
+                      X-Ray
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Radiology Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => handleDropdownToggle("radiology")}
+                onMouseEnter={() => setActiveDropdown("radiology")}
+                className="flex items-center space-x-1 text-stellar-600 hover:text-stellar-800 transition-colors"
+              >
+                <span>Radiology</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              {activeDropdown === "radiology" && (
+                <div
+                  className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-48 bg-white border border-stellar-200 rounded-md shadow-lg z-50"
+                  onMouseLeave={closeDropdown}
+                >
+                  <div className="p-4 space-y-2">
+                    <Link
+                      to="/category/allans-medical"
+                      className="block px-4 py-2 text-stellar-600 hover:text-stellar-800 hover:bg-stellar-50 rounded transition-colors"
+                      onClick={closeDropdown}
+                    >
+                      CT Scan
+                    </Link>
+                    <Link
+                      to="/category/allans-medical"
+                      className="block px-4 py-2 text-stellar-600 hover:text-stellar-800 hover:bg-stellar-50 rounded transition-colors"
+                      onClick={closeDropdown}
+                    >
+                      MRI
+                    </Link>
+                    <Link
+                      to="/category/allans-medical"
+                      className="block px-4 py-2 text-stellar-600 hover:text-stellar-800 hover:bg-stellar-50 rounded transition-colors"
+                      onClick={closeDropdown}
+                    >
+                      CATH Lab
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Telephony Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => handleDropdownToggle("telephony")}
+                onMouseEnter={() => setActiveDropdown("telephony")}
+                className="flex items-center space-x-1 text-stellar-600 hover:text-stellar-800 transition-colors"
+              >
+                <span>Telephony</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              {activeDropdown === "telephony" && (
+                <div
+                  className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-48 bg-white border border-stellar-200 rounded-md shadow-lg z-50"
+                  onMouseLeave={closeDropdown}
+                >
+                  <div className="p-4 space-y-2">
+                    <Link
+                      to="/category/hp-seriesepabx"
+                      className="block px-4 py-2 text-stellar-600 hover:text-stellar-800 hover:bg-stellar-50 rounded transition-colors"
+                      onClick={closeDropdown}
+                    >
+                      EPABX
+                    </Link>
+                    <Link
+                      to="/category/unified-communications"
+                      className="block px-4 py-2 text-stellar-600 hover:text-stellar-800 hover:bg-stellar-50 rounded transition-colors"
+                      onClick={closeDropdown}
+                    >
+                      Unified Communication
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Office Automation Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => handleDropdownToggle("office")}
+                onMouseEnter={() => setActiveDropdown("office")}
+                className="flex items-center space-x-1 text-stellar-600 hover:text-stellar-800 transition-colors"
+              >
+                <span>Office Automation</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              {activeDropdown === "office" && (
+                <div
+                  className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-48 bg-white border border-stellar-200 rounded-md shadow-lg z-50"
+                  onMouseLeave={closeDropdown}
+                >
+                  <div className="p-4 space-y-2">
+                    <Link
+                      to="/category/office-automation"
+                      className="block px-4 py-2 text-stellar-600 hover:text-stellar-800 hover:bg-stellar-50 rounded transition-colors"
+                      onClick={closeDropdown}
+                    >
+                      Photocopiers
+                    </Link>
+                    <Link
+                      to="/category/office-automation"
+                      className="block px-4 py-2 text-stellar-600 hover:text-stellar-800 hover:bg-stellar-50 rounded transition-colors"
+                      onClick={closeDropdown}
+                    >
+                      Printers
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </nav>
 
@@ -157,19 +295,85 @@ const Header = () => {
                 >
                   Home
                 </Link>
-                {categories.map((category) => (
+
+                <Link
+                  to="/services"
+                  className="block text-stellar-700 hover:text-stellar-800 font-medium py-2"
+                >
+                  Services
+                </Link>
+
+                <div className="space-y-1">
+                  <div className="text-stellar-700 font-medium py-2">
+                    Medical Equipment
+                  </div>
                   <Link
-                    key={category}
-                    to={`/category/${category
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")
-                      .replace(/\(/g, "")
-                      .replace(/\)/g, "")}`}
-                    className="block text-stellar-600 hover:text-stellar-800 py-2"
+                    to="/category/allans-medical"
+                    className="block text-stellar-600 hover:text-stellar-800 py-1 pl-4"
                   >
-                    {category}
+                    X-Ray
                   </Link>
-                ))}
+                </div>
+
+                <div className="space-y-1">
+                  <div className="text-stellar-700 font-medium py-2">
+                    Radiology
+                  </div>
+                  <Link
+                    to="/category/allans-medical"
+                    className="block text-stellar-600 hover:text-stellar-800 py-1 pl-4"
+                  >
+                    CT Scan
+                  </Link>
+                  <Link
+                    to="/category/allans-medical"
+                    className="block text-stellar-600 hover:text-stellar-800 py-1 pl-4"
+                  >
+                    MRI
+                  </Link>
+                  <Link
+                    to="/category/allans-medical"
+                    className="block text-stellar-600 hover:text-stellar-800 py-1 pl-4"
+                  >
+                    CATH Lab
+                  </Link>
+                </div>
+
+                <div className="space-y-1">
+                  <div className="text-stellar-700 font-medium py-2">
+                    Telephony
+                  </div>
+                  <Link
+                    to="/category/hp-seriesepabx"
+                    className="block text-stellar-600 hover:text-stellar-800 py-1 pl-4"
+                  >
+                    EPABX
+                  </Link>
+                  <Link
+                    to="/category/unified-communications"
+                    className="block text-stellar-600 hover:text-stellar-800 py-1 pl-4"
+                  >
+                    Unified Communication
+                  </Link>
+                </div>
+
+                <div className="space-y-1">
+                  <div className="text-stellar-700 font-medium py-2">
+                    Office Automation
+                  </div>
+                  <Link
+                    to="/category/office-automation"
+                    className="block text-stellar-600 hover:text-stellar-800 py-1 pl-4"
+                  >
+                    Photocopiers
+                  </Link>
+                  <Link
+                    to="/category/office-automation"
+                    className="block text-stellar-600 hover:text-stellar-800 py-1 pl-4"
+                  >
+                    Printers
+                  </Link>
+                </div>
               </nav>
               <div className="flex flex-col space-y-2 pt-4">
                 <Link to="/chat" className="flex-1">

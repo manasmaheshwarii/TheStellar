@@ -14,25 +14,7 @@ const CategoriesSection = () => {
       gradient: "from-blue-500 to-blue-700",
     },
     {
-      name: "Visual Solution",
-      slug: "visual-solution",
-      description: "Professional Display Systems & Touch Solutions",
-      productCount: "6+ Products",
-      image:
-        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
-      gradient: "from-indigo-500 to-indigo-700",
-    },
-    {
-      name: "Purifiers",
-      slug: "purifiers",
-      description: "Home & Car Air Purification Systems",
-      productCount: "7+ Products",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-      gradient: "from-green-500 to-green-700",
-    },
-    {
-      name: "Allans Medical",
+      name: "Medical Equipment",
       slug: "allans-medical",
       description: "X-Ray, Medical Equipment & Sonography",
       productCount: "13+ Products",
@@ -41,44 +23,25 @@ const CategoriesSection = () => {
       gradient: "from-purple-500 to-purple-700",
     },
     {
-      name: "Adonis Medical",
-      slug: "adonis-medical",
-      description: "X-Ray & C-ARM Medical Machines",
+      name: "Radiology",
+      slug: "allans-medical",
+      description: "CT Scan, MRI & CATH Lab Solutions",
       productCount: "8+ Products",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
       gradient: "from-red-500 to-red-700",
     },
     {
-      name: "COVID 19",
-      slug: "covid-19",
-      description: "Testing Solutions & Safety Equipment",
-      productCount: "12+ Products",
-      image:
-        "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
-      gradient: "from-cyan-500 to-cyan-700",
-    },
-    {
-      name: "Unified Communications",
+      name: "Telephony",
       slug: "unified-communications",
-      description: "OpenScape Communication Systems",
-      productCount: "13+ Products",
+      description: "EPABX & Unified Communication Systems",
+      productCount: "26+ Products",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       gradient: "from-orange-500 to-orange-700",
     },
-    {
-      name: "HP Series(EPABX)",
-      slug: "hp-seriesepabx",
-      description: "HP Communication & EPABX Solutions",
-      productCount: "13+ Products",
-      image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-      gradient: "from-teal-500 to-teal-700",
-    },
   ];
 
-  // ... keep existing code (return statement and JSX) the same
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -92,7 +55,7 @@ const CategoriesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category) => (
             <Link key={category.slug} to={`/category/${category.slug}`}>
               <Card className="group hover:shadow-2xl transition-all duration-300 border-stellar-200 overflow-hidden h-full">
