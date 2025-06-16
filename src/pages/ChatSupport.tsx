@@ -6,6 +6,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Phone } from "lucide-react";
 
 const ChatSupport = () => {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "919491399000"; // WhatsApp format without + and spaces
+    const message = "Hello! I would like to inquire about your medical equipment and services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = "tel:+919491399000";
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -37,7 +50,10 @@ const ChatSupport = () => {
               </p>
               <div className="space-y-3">
                 <p className="text-stellar-700 font-medium">+ 91 9491399000</p>
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                <Button 
+                  onClick={handleWhatsAppClick}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white"
+                >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Chat on WhatsApp
                 </Button>
@@ -61,6 +77,7 @@ const ChatSupport = () => {
               <div className="space-y-3">
                 <p className="text-stellar-700 font-medium">+ 91 9491399000</p>
                 <Button
+                  onClick={handlePhoneClick}
                   variant="outline"
                   className="w-full border-stellar-300 text-stellar-700 hover:bg-stellar-50"
                 >
