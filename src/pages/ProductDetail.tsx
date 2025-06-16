@@ -5,10 +5,86 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, MessageCircle, Phone } from "lucide-react";
+import { Star, MessageCircle, Phone, Download } from "lucide-react";
+
+// // src/components/ProductDetail.tsx
+
+// const productPdfMap: Record<string, string> = {
+
+// };
 
 const ProductDetail = () => {
   const { id } = useParams();
+
+  // Map product names to their specific PDF files
+  const productPdfMap: Record<string, string> = {
+    // EPABX
+    "HP-110 EPABX System": "HP-110-Data-Sheet.pdf",
+    "HP-120 Key Telephone System": "HP-120-Key-Telephone-System-Data-Sheet.pdf",
+    "HP-150 Communication System": "HP-150-Data-Sheet.pdf",
+    "HP-190 Communication System": "HP-190-Data-Sheet.pdf",
+    "HP-256 IP Communication System": "HP-256-IP-Data-Sheet.pdf",
+    "HP-1000 Communication System": "HP-1000-Datasheet.pdf",
+    "HP-R Recording Solution": "HP-R-Recording-System-Data-Sheet.pdf",
+    // PhotoCopiers not done all
+    "A3 Monochrome MFP(Photocopier)": "AR-6020DV_BRO.pdf",
+    "AR-6020NV": "AR-6020NV.pdf",
+    "AR-6020V": "AR-6020V.pdf",
+    "MX-3560_3060V_BRO_RV3": "MX-3560_3060V_BRO_RV3.pdf",
+    "MX-4070V_BRO": "MX-4070V_BRO.pdf",
+    "MX-6051-5051-4051-3551-3051-2651": "MX-6051-5051-4051-3551-3051-2651.pdf",
+    "MX-B450P-B350P": "MX-B450P-B350P.pdf",
+    // Printers done
+    "Epson Workforce Pro WF-M5799(Printer)": "Epson WF-M5799.pdf",
+    "Epson Workforce Pro WF-C5790(Printer)": "Epson WF-C5790.pdf",
+    "Epson Workforce Enterprise WF-C20590 (Printer)": "WF-C20590-Brochure.pdf",
+    // Unified Communications
+    "OpenSacpe-Desk-Phone-IP35G-ECO-Datasheet":
+      "OpenSacpe-Desk-Phone-IP35G-ECO-Datasheet.pdf", // not done
+    "OpenSacpe-Personal-Edition-Datasheet":
+      "OpenSacpe-Personal-Edition-Datasheet.pdf", // not done
+    "OpenScape 4000": "OpenScape-4000-Datasheet.pdf",
+    "OpenScape Business": "OpenScape-Business-Datasheet.pdf",
+    "OpenScape-Dect-Handsets-Datasheet":
+      "OpenScape-Dect-Handsets-Datasheet.pdf", // not done
+    "OpenScape Deskphone": "OpenScape-Desk-Phone-Datasheet.pdf",
+    "OpenScape UC": "OpenScape-UC-Application-Enterprise-Edition-Datasheet.pdf",
+    "OpenScape-Voice-V9-Datasheet": "OpenScape-Voice-V9-Datasheet.pdf", // not done
+    "OpenScape Web Collaboration": "OpenScape-Web-Collaboration-Datasheet.pdf",
+    "OpenScape Xpert": "OpenScape-Xpert-Datasheet.pdf",
+    "OpenScape Xpressions": "OpenScape-Xpressions-Datasheet.pdf",
+    "OpenStage-T-Datasheet": "OpenStage-T-Datasheet.pdf", // not done
+    "OpenStage-WL3-Datasheet": "OpenStage-WL3-Datasheet.pdf",
+    // "A4 Monochrome (Photocopier)": "MX-B450P-B350P.pdf",
+    // "A4 Monochrome MFP (Photocopier)": "MX-B450P-B350P.pdf",
+    // "A3 Monochrome MFP(Photocopier)": "AR-6020DV_BRO.pdf",
+    // "A3 Colour(Photocopier)": "MX-3560_3060V_BRO_RV3.pdf",
+    // "A3 Business Color MFP(Photocopier)": "MX-4070V_BRO.pdf",
+    // "A3 Business advanced colour MFP(Photocopier)":
+    //   "MX-6051-5051-4051-3551-3051-2651.pdf",
+    // "Epson Workforce Enterprise WF-C20590 (Printer)": "WF-C20590-Brochure.pdf",
+    // "Epson Workforce Pro WF-C5790(Printer)": "Epson-WF-C5790.pdf",
+    // "Epson Workforce Pro WF-M5799(Printer)": "Epson-WF-M5799.pdf",
+  };
+
+  // Function to handle PDF download
+  const handlePdfDownload = (productName: string) => {
+    const pdfFileName = productPdfMap[productName];
+    if (pdfFileName) {
+      const link = document.createElement("a");
+      link.href = `/pdfs/${pdfFileName}`;
+      link.download = pdfFileName;
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
+  // Function to check if product has PDF
+  const hasProductPdf = (productName: string) => {
+    return productPdfMap.hasOwnProperty(productName);
+  };
 
   // Comprehensive product database with detailed information for ALL products
   const productsDatabase = {
@@ -17,12 +93,10 @@ const ProductDetail = () => {
       id: 1,
       name: "A4 Monochrome (Photocopier)",
       category: "Office Automation",
-      price: "₹2,500",
-      originalPrice: "₹2,800",
       image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=800&h=600&fit=crop",
+        "https://thestellar.in/images3/Nano_Printer_JPEG_MX_B450P_front.jpg",
       inStock: true,
-      stockCount: 8,
+
       description:
         "Professional A4 monochrome photocopier with smooth print functionality and wireless support. Perfect for small to medium businesses requiring reliable document production.",
       features: [
@@ -46,12 +120,9 @@ const ProductDetail = () => {
       id: 2,
       name: "A4 Monochrome MFP (Photocopier)",
       category: "Office Automation",
-      price: "₹3,200",
-      originalPrice: "₹3,600",
       image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=800&h=600&fit=crop",
+        "https://thestellar.in/images3/Nano_MFP_Asia_JPEG_MX_B350F_front.jpg",
       inStock: true,
-      stockCount: 5,
       description:
         "Expandable document production multifunction printer designed for growing workgroups. Combines printing, scanning, copying, and faxing capabilities.",
       features: [
@@ -75,12 +146,8 @@ const ProductDetail = () => {
       id: 3,
       name: "A3 Monochrome MFP(Photocopier)",
       category: "Office Automation",
-      price: "₹4,800",
-      originalPrice: "₹5,200",
-      image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=800&h=600&fit=crop",
+      image: "https://thestellar.in/images1/AR_6023DV_slant.jpg",
       inStock: true,
-      stockCount: 3,
       description:
         "Large format A3 monochrome multifunction printer with advanced features for high-volume document processing and professional output quality.",
       features: [
@@ -104,12 +171,8 @@ const ProductDetail = () => {
       id: 4,
       name: "A3 Colour(Photocopier)",
       category: "Office Automation",
-      price: "₹8,500",
-      originalPrice: "₹9,200",
-      image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=800&h=600&fit=crop",
+      image: "https://thestellar.in/images3/MX_2651_LSITING_PAGE.jpg",
       inStock: true,
-      stockCount: 4,
       description:
         "Professional A3 color multifunction printer for business environments requiring high-quality color document production and versatile media handling.",
       features: [
@@ -133,12 +196,8 @@ const ProductDetail = () => {
       id: 5,
       name: "A3 Business Color MFP(Photocopier)",
       category: "Office Automation",
-      price: "₹12,000",
-      originalPrice: "₹13,500",
-      image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=800&h=600&fit=crop",
+      image: "https://thestellar.in/images3/MX_3560V_FN29_slant.jpg",
       inStock: true,
-      stockCount: 2,
       description:
         "Advanced A3 color multifunction printer with enhanced features for demanding business environments requiring professional-grade color output.",
       features: [
@@ -162,12 +221,8 @@ const ProductDetail = () => {
       id: 6,
       name: "A3 Business advanced colour MFP(Photocopier)",
       category: "Office Automation",
-      price: "₹15,200",
-      originalPrice: "₹16,800",
-      image:
-        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&h=600&fit=crop",
+      image: "https://thestellar.in/images3/MX_4070V_FN31_full_front.jpg",
       inStock: true,
-      stockCount: 2,
       description:
         "High-performance enterprise printer with cutting-edge technology for mission-critical business applications and professional document workflows.",
       features: [
@@ -191,12 +246,8 @@ const ProductDetail = () => {
       id: 7,
       name: "Epson Workforce Enterprise WF-C20590 (Printer)",
       category: "Office Automation",
-      price: "₹800",
-      originalPrice: "₹950",
-      image:
-        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&h=600&fit=crop",
+      image: "https://thestellar.in/images2/WF-C20590_01_2-1.jpg",
       inStock: true,
-      stockCount: 12,
       description:
         "Professional workforce printer designed for high-volume business printing with cost-effective operation and reliable performance.",
       features: [
@@ -220,10 +271,7 @@ const ProductDetail = () => {
       id: 8,
       name: "Epson Workforce Pro WF-C5790(Printer)",
       category: "Office Automation",
-      price: "₹750",
-      originalPrice: "₹890",
-      image:
-        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&h=600&fit=crop",
+      image: "https://thestellar.in/images2/WF-C5790_01-1.png",
       inStock: true,
       stockCount: 8,
       description:
@@ -249,12 +297,8 @@ const ProductDetail = () => {
       id: 9,
       name: "Epson Workforce Pro WF-M5799(Printer)",
       category: "Office Automation",
-      price: "₹650",
-      originalPrice: "₹780",
-      image:
-        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&h=600&fit=crop",
+      image: "https://thestellar.in/images2/wf-m5799_hero-paper_690x460.jpg",
       inStock: true,
-      stockCount: 10,
       description:
         "Reliable monochrome business printer with multifunction capabilities for small to medium-sized offices requiring efficient document processing.",
       features: [
@@ -3095,12 +3139,9 @@ const ProductDetail = () => {
     id: parseInt(id || "1"),
     name: "Product Details",
     category: "General",
-    price: "Contact for Price",
-    originalPrice: null,
     image:
       "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
     inStock: true,
-    stockCount: 5,
     description:
       "Professional grade product designed for business use. Contact our sales team for detailed specifications and pricing information.",
     features: [
@@ -3235,32 +3276,24 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-3 mb-6">
-                <span className="text-3xl font-bold text-stellar-800">
-                  {product.price}
-                </span>
-                {product.originalPrice && (
-                  <span className="text-xl text-stellar-400 line-through">
-                    {product.originalPrice}
-                  </span>
-                )}
-              </div>
-
               <div className="mb-6">
                 <p className="text-stellar-600 mb-4">{product.description}</p>
-                <div className="text-sm text-stellar-600">
-                  <span className="font-medium">Stock: </span>
-                  <span
-                    className={
-                      product.inStock ? "text-green-600" : "text-red-600"
-                    }
-                  >
-                    {product.inStock
-                      ? `${product.stockCount} units available`
-                      : "Out of stock"}
-                  </span>
-                </div>
+                <div className="text-sm text-stellar-600"></div>
               </div>
+
+              {/* PDF Download Button */}
+              {hasProductPdf(product.name) && (
+                <div className="mb-6">
+                  <Button
+                    onClick={() => handlePdfDownload(product.name)}
+                    variant="outline"
+                    className="w-full sm:w-auto border-stellar-600 text-stellar-700 hover:bg-stellar-50"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Product Datasheet
+                  </Button>
+                </div>
+              )}
 
               {/* Contact Options */}
               <div className="space-y-4">

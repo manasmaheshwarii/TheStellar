@@ -10,10 +10,8 @@ const OffersSection = () => {
     {
       id: 1,
       title: "Flash Sale: A4 Monochrome (Photocopier)",
-      description: "Save up to 25% on premium digital radiography equipment",
-      discount: "25% OFF",
-      originalPrice: "₹2,800",
-      salePrice: "₹2,500",
+      description: "Save up to 10% on premium digital radiography equipment",
+      discount: "10% OFF",
       timeLeft: "2 days left",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop",
@@ -24,9 +22,7 @@ const OffersSection = () => {
       id: 2,
       title: "Deal: A4 Monochrome MFP (Photocopier)",
       description: "Get essential pathology equipment package at special price",
-      discount: "30% OFF",
-      originalPrice: "₹,3600",
-      salePrice: "₹3,200",
+      discount: "10% OFF",
       timeLeft: "5 days left",
       image:
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=500&h=300&fit=crop",
@@ -39,8 +35,6 @@ const OffersSection = () => {
       description:
         "Latest technology with advanced AI diagnostics capabilities",
       discount: "LAUNCH PRICE",
-      originalPrice: "₹5,200",
-      salePrice: "₹4,899",
       timeLeft: "Limited stock",
       image:
         "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=500&h=300&fit=crop",
@@ -117,7 +111,7 @@ const OffersSection = () => {
                   {offer.description}
                 </p>
 
-                <div className="space-y-3 mb-4">
+                {/* <div className="space-y-3 mb-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-stellar-500">
                       Original Price:
@@ -133,13 +127,13 @@ const OffersSection = () => {
                     </span>
                   </div>
                   <div className="text-center">
-                    {/* <span className="text-green-600 font-semibold">
+                    <span className="text-green-600 font-semibold">
                       You Save: $
                       {parseInt(offer.originalPrice.replace(/[$,]/g, "")) -
                         parseInt(offer.salePrice.replace(/[$,]/g, ""))}
-                    </span> */}
+                    </span>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex gap-3">
                   <Link to={`/product/${offer.id}`} className="flex-1">

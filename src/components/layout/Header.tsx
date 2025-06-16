@@ -127,12 +127,6 @@ const Header = () => {
             >
               Home
             </Link>
-            <Link
-              to="/services"
-              className="text-stellar-700 hover:text-stellar-800 font-medium transition-colors px-4 py-2"
-            >
-              Services
-            </Link>
 
             {/* Medical Equipment Dropdown */}
             <div className="relative">
@@ -273,6 +267,12 @@ const Header = () => {
                 </div>
               )}
             </div>
+            <Link
+              to="/services"
+              className="block text-stellar-700 hover:text-stellar-800 font-medium py-2"
+            >
+              Services
+            </Link>
           </div>
         </nav>
 
@@ -294,13 +294,6 @@ const Header = () => {
                   className="block text-stellar-700 hover:text-stellar-800 font-medium py-2"
                 >
                   Home
-                </Link>
-
-                <Link
-                  to="/services"
-                  className="block text-stellar-700 hover:text-stellar-800 font-medium py-2"
-                >
-                  Services
                 </Link>
 
                 <div className="space-y-1">
@@ -374,6 +367,12 @@ const Header = () => {
                     Printers
                   </Link>
                 </div>
+                <Link
+                  to="/services"
+                  className="block text-stellar-700 hover:text-stellar-800 font-medium py-2"
+                >
+                  Services
+                </Link>
               </nav>
               <div className="flex flex-col space-y-2 pt-4">
                 <Link to="/chat" className="flex-1">

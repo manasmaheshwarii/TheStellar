@@ -24,7 +24,6 @@ const CategoryListing = () => {
   const categoryNames = {
     "office-automation": "Office Automation",
     "visual-solution": "Visual Solution",
-    purifiers: "Purifiers",
     "allans-medical": "Allans Medical",
     "adonis-medical": "Adonis Medical",
     "covid-19": "COVID 19",
@@ -33,8 +32,6 @@ const CategoryListing = () => {
     all: "All Products",
   };
 
-  // ... keep existing code (products array) the same
-
   const products = [
     // Office Automation Products
     {
@@ -42,7 +39,7 @@ const CategoryListing = () => {
       name: "A4 Monochrome (Photocopier)",
       category: "office-automation",
       image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
+        "https://thestellar.in/images3/Nano_Printer_JPEG_MX_B450P_front.jpg",
       inStock: true,
       description: "Smooth Print Functionality With Wireless Support",
     },
@@ -51,7 +48,7 @@ const CategoryListing = () => {
       name: "A4 Monochrome MFP (Photocopier)",
       category: "office-automation",
       image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
+        "https://thestellar.in/images3/Nano_MFP_Asia_JPEG_MX_B350F_front.jpg",
       inStock: true,
       description: "Expandable Document Production for Workgroups on the Grow",
     },
@@ -59,8 +56,7 @@ const CategoryListing = () => {
       id: 3,
       name: "A3 Monochrome MFP(Photocopier)",
       category: "office-automation",
-      image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
+      image: "https://thestellar.in/images1/AR_6023DV_slant.jpg",
       inStock: true,
       description: "Large format A3 monochrome multifunction printer",
     },
@@ -68,8 +64,7 @@ const CategoryListing = () => {
       id: 4,
       name: "A3 Colour(Photocopier)",
       category: "office-automation",
-      image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
+      image: "https://thestellar.in/images3/MX_2651_LSITING_PAGE.jpg",
       inStock: true,
       description: "Professional A3 color multifunction printer for business",
     },
@@ -77,8 +72,7 @@ const CategoryListing = () => {
       id: 5,
       name: "A3 Business Color MFP(Photocopier)",
       category: "office-automation",
-      image:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=400&h=300&fit=crop",
+      image: "https://thestellar.in/images3/MX_3560V_FN29_slant.jpg",
       inStock: true,
       description:
         "Advanced A3 color multifunction printer with enhanced features",
@@ -87,8 +81,7 @@ const CategoryListing = () => {
       id: 6,
       name: "A3 Business advanced colour MFP(Photocopier)",
       category: "office-automation",
-      image:
-        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=300&fit=crop",
+      image: "https://thestellar.in/images3/MX_4070V_FN31_full_front.jpg",
       inStock: true,
       description: "High-performance enterprise printer",
     },
@@ -96,8 +89,7 @@ const CategoryListing = () => {
       id: 7,
       name: "Epson Workforce Enterprise WF-C20590 (Printer)",
       category: "office-automation",
-      image:
-        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=300&fit=crop",
+      image: "https://thestellar.in/images2/WF-C20590_01_2-1.jpg",
       inStock: true,
       description: "Professional workforce printer",
     },
@@ -105,8 +97,7 @@ const CategoryListing = () => {
       id: 8,
       name: "Epson Workforce Pro WF-C5790(Printer)",
       category: "office-automation",
-      image:
-        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=300&fit=crop",
+      image: "https://thestellar.in/images2/WF-C5790_01-1.png",
       inStock: true,
       description: "Monochrome professional printer",
     },
@@ -114,8 +105,7 @@ const CategoryListing = () => {
       id: 9,
       name: "Epson Workforce Pro WF-M5799(Printer)",
       category: "office-automation",
-      image:
-        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&h=300&fit=crop",
+      image: "https://thestellar.in/images2/wf-m5799_hero-paper_690x460.jpg",
       inStock: true,
       description: "Professional visual display solution",
     },
