@@ -13,6 +13,8 @@ const ComplaintSection = () => {
     const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
+    
+    // Open the email client
     window.location.href = mailtoLink;
   };
 
